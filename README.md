@@ -23,7 +23,7 @@ docker build -t my-telegram-bot .
 ```
 2. И затем запустить контейнер с этим образом:
 ```bash 
-docker run TELEGRAM_API_TOKEN=your_bot_token my-telegram-bot
+docker run -e TELEGRAM_API_TOKEN=your_bot_token my-telegram-bot
 ```
 3. В этом примере мы предполагаем, что ваше приложение слушает порт 80 внутри контейнера, и мы пробрасываем этот порт на порт 4000 на хосте.Если ваше приложение слушает другой порт, вам нужно будет изменить эти значения соответствующим образом.
 
