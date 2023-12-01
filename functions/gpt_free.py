@@ -9,8 +9,11 @@ async def ask_gpt(role: str, content: str) -> str:
     try:
         response = await g4f.ChatCompletion.create_async(
             model=g4f.models.gpt_4,
+            provider=g4f.Provider.Bing,
             messages=[{"role": role,
-                       "content": content}],
+                       "content": content},
+                      ],
+            stream=g4f.Provider.Bing.supports_stream,
         )
     except Exception as e:
         print(e)
